@@ -1,4 +1,5 @@
-- Switch: http://www.w3schools.com/howto/howto_css_switch.asp
+# TODO
+- Refactor messages#unsafe using parameters
 
 # Questions
 - git ci -m "my message" => helpful?
