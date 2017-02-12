@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all
+    @messages = Message.safe
   end
 end
