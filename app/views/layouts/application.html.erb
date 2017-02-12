@@ -4,11 +4,23 @@
     <title>SafeTwitts</title>
     <%= csrf_meta_tags %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-faded">
+      <div class="navbar-brand" href="#">
+        <%= image_tag "twitter_logo.png", width: 30, class: "d-inline-block align-top" %>
+        Safe Twitts
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

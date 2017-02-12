@@ -1,0 +1,5 @@
+# A sample Bowerfile
+# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+
+# rake bower:install
+asset 'bootstrap', '4.0.0-alpha.6'
