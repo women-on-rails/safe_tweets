@@ -1,0 +1,16 @@
+.container-fluid
+  #toggle
+    .row
+      .col-sm-6.text-right
+        Safe Mode
+      .col-sm-6
+        = link_to @link do
+          %label.switch
+            %input{type: 'checkbox', checked: @checked}
+            .slider.round
+
+#messages.grid
+  - @messages.each do |msg|
+    .row
+      .col-sm-2= msg.author
+      .col-sm-10= msg.content

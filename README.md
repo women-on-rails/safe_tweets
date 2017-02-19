@@ -1,24 +1,7 @@
-# README
+# TODO
+- Refactor messages#unsafe using parameters
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Questions
+- git ci -m "my message" => helpful?
+- tests
+I installed rspec and the Upcase tutorial says we should not use ActiveRecord fixtures. Why?
