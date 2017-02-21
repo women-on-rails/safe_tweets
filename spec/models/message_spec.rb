@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Message, type: :model do
-    let(:message) { FactoryGirl.create(:message) }
-    let(:empty_message) { FactoryGirl.build(:empty_message) }
-    let(:troll_message) { FactoryGirl.create(:troll_message) }
+    let(:message) { create(:message) }
+    let(:empty_message) { build(:message, :empty_message) }
+    let(:troll_message) { create(:message, :troll_message) }
     context "when fields are empty" do
         it "should not be valid" do
             expect(empty_message).not_to be_valid
@@ -16,17 +16,17 @@ RSpec.describe Message, type: :model do
         end
 
         it "should have an author" do
-            msg = FactoryGirl.build_stubbed(:message, author: "")
+            msg = build_stubbed(:message, author: "")
             expect(msg).not_to be_valid
         end
 
         it "should have a slug author" do 
-            msg = FactoryGirl.build_stubbed(:message, author_slug: "")
+            msg = build_stubbed(:message, author_slug: "")
             expect(msg).not_to be_valid
         end
 
         it "should have content" do
-            msg = FactoryGirl.build_stubbed(:message, content: "")
+            msg = build_stubbed(:message, content: "")
             expect(msg).not_to be_valid
         end
     end
