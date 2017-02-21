@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Message, type: :model do
     let(:message) { FactoryGirl.create(:message) }
-    let(:empty_message) { FactoryGirl.build(:empty_message) }
-    let(:troll_message) { FactoryGirl.create(:troll_message) }
+    let(:empty_message) { FactoryGirl.build(:message, :empty_message) }
+    let(:troll_message) { FactoryGirl.create(:message, :troll_message) }
     context "when fields are empty" do
         it "should not be valid" do
             expect(empty_message).not_to be_valid
