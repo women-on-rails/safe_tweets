@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Message, type: :model do
+<<<<<<< HEAD
     let(:message) { FactoryGirl.create(:message) }
     let(:empty_message) { FactoryGirl.build(:message, :empty_message) }
     let(:troll_message) { FactoryGirl.create(:message, :troll_message) }
+=======
+    let(:message) { create(:message) }
+    let(:empty_message) { build(:message, :empty_message) }
+    let(:troll_message) { create(:message, :troll_message) }
+>>>>>>> Add snippet for FactoryGirl
     context "when fields are empty" do
         it "should not be valid" do
             expect(empty_message).not_to be_valid
@@ -16,17 +22,22 @@ RSpec.describe Message, type: :model do
         end
 
         it "should have an author" do
-            msg = FactoryGirl.build_stubbed(:message, author: "")
+            msg = build_stubbed(:message, author: "")
             expect(msg).not_to be_valid
         end
 
+<<<<<<< HEAD
         it "should have a slug author" do
             msg = FactoryGirl.build_stubbed(:message, author_slug: "")
+=======
+        it "should have a slug author" do 
+            msg = build_stubbed(:message, author_slug: "")
+>>>>>>> Add snippet for FactoryGirl
             expect(msg).not_to be_valid
         end
 
         it "should have content" do
-            msg = FactoryGirl.build_stubbed(:message, content: "")
+            msg = build_stubbed(:message, content: "")
             expect(msg).not_to be_valid
         end
     end
