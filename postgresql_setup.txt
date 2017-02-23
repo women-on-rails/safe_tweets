@@ -1,0 +1,4 @@
+CREATE ROLE safe_twitts WITH LOGIN CREATEDB;
+CREATE DATABASE safe_twitts_production WITH OWNER safe_twitts;
+CREATE DATABASE safe_twitts_development WITH OWNER safe_twitts;
+CREATE DATABASE safe_twitts_test WITH OWNER safe_twitts;
