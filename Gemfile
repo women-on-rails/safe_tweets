@@ -45,12 +45,12 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'pry'
 end
 
 group :development do
   gem 'better_errors'
-  gem 'pry'
-  gem "binding_of_caller" 
+  gem "binding_of_caller"
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   # gem 'web-console', '>= 3.3.0'
   # gem 'listen', '~> 3.0.5'
@@ -59,7 +59,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :test do 
+group :test do
   gem 'capybara'
   gem 'database_cleaner'
 end
