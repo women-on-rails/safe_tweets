@@ -1,16 +1,7 @@
-.container-fluid
-  #toggle
-    .row
-      .col-sm-6.text-right
-        Safe Mode
-      .col-sm-6
-        = link_to @link do
-          %label.switch
-            %input{type: 'checkbox', checked: @checked}
-            .slider.round
+= render partial: 'toggle', locals: {toggle_safe_mode: @toggle_safe_mode, safe_mode: @safe_mode }
 
 #messages.grid
   - @messages.each do |msg|
-    .row
+    .row.message{id: dom_id(msg)}
       .col-sm-2= msg.author
       .col-sm-10= msg.content
