@@ -12,3 +12,15 @@ feature "User toggles Safe mode" do
   end
 
 end
+
+feature "User says a message" do
+  let(:message) { create(:message) }
+  let(:troll_message) { create(:troll_message) }
+
+  scenario "is unsafe" do
+    visit(root_path)
+    page.find_by_id("messages_#{message.id}", visible: false)
+  end
+
+
+end
