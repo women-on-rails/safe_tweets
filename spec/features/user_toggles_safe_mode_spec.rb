@@ -1,22 +1,18 @@
-require 'rails_helper'
+#require 'rails_helper'
 
-feature "User toggles Safe mode" do
-  let(:message) { create(:message) }
-  let(:troll_message) { create(:message, :troll_message) }
+feature 'User toggles Safe Mode' do
 
-  scenario "it shows unsafe tweets" do
-    visit root_path(safe: false)
-    expect(page).to have_content(troll_message.author)
+  let!(:troll_message) { create(:message, :troll_message) }
+
+  scenario 'clicking on a toggle' do
+    visit_safe_path
+    page.find('a#toggle_safe_mode').click
+    expect(page).to have_selector(:css, "#message_#{troll_message.id}")
   end
 
-end
-
-feature "User says a message" do
-  let!(:message) { create(:message) }
-
-  scenario "is unsafe" do
-    visit(root_path)
-    page.find_by_id("message_#{message.id}", visible: false)
+  scenario 'it shows unsafe tweets' do
+    visit_unsafe_path
+    expect(page).to have_selector(:css, "#message_#{troll_message.id}")
   end
 
 end
