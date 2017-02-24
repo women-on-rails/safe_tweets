@@ -1,5 +1,3 @@
-#require 'rails_helper'
-
 feature 'User toggles Safe Mode' do
 
   let!(:troll_message) { create(:message, :troll_message) }

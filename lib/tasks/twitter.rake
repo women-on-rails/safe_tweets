@@ -5,7 +5,7 @@ namespace :twitter do
   # As this: rake twitter:get_tweets_from_hashtags['one twp',30]
   task :get_tweets_from_hashtag, [:hashtags, :limit] => :environment do |t, args|
     h = args[:hashtags].split(" ") unless args[:hashtags].nil?
-    hashtags = (h || "Trump")
+    hashtags = (h || ["Trump"])
     limit = args[:limit].to_i
     hashtags.each do |h|
       begin
