@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20170212215741) do
     t.string   "author"
     t.string   "author_slug"
     t.text     "content"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "safe",        default: true
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "safe"
   end
 
 end
