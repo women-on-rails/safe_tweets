@@ -4,7 +4,7 @@
       .col-sm-6.text-right
         Safe Mode
       .col-sm-6
-        = link_to root_path(safe: toggle_safe_mode) do
+        = link_to root_path(safe: toggle_safe_mode), id: 'toggle_safe_mode' do
           %label.switch
             %input{type: 'checkbox', checked: safe_mode}
             .slider.round

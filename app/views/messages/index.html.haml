@@ -4,4 +4,12 @@
   - @messages.each do |msg|
     .row.message{id: dom_id(msg)}
       .col-sm-2= msg.author
-      .col-sm-10= msg.content
+      .col-sm-10
+        %span= msg.content
+        - if msg.safe == true
+          = link_to message_is_unsafe_path(msg.id, safe: @safe_mode), class: 'is_unsafe', method: :put do
+            %span.fa.fa-thumbs-down.unsafe
+            -#%button.unsafe= "unsafe"
+        - else
+          = link_to message_is_safe_path(msg.id, safe: @safe_mode), class: 'is_safe', method: :put do
+            %span.fa.fa-thumbs-up.safe
