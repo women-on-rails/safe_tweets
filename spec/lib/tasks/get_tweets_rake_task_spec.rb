@@ -6,10 +6,6 @@ describe "twitter:get_tweets_from_hashtag" do
   include_context "rake"
 
   it "creates new messages" do
-    pending('Method not working for the moment')
-    msg = Message.all.count
-    subject.invoke
-    new_msg = Message.all.count
-    expect(msg).to be > new_msg
+    expect{ subject.invoke }.to change{ Message.count }.by(20)
   end
 end
