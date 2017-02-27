@@ -6,7 +6,7 @@ namespace :twitter do
   task :get_tweets_from_hashtag, [:hashtags, :limit] => :environment do |t, args|
     h = args[:hashtags].split(" ") unless args[:hashtags].nil?
     hashtags = (h || ["Trump"])
-    limit = args[:limit].to_i
+    limit = (args[:limit] || 20).to_i
     hashtags.each do |h|
       begin
         tweets = TWITTER.search("##{h}").take(limit).collect do |tweet|
