@@ -3,7 +3,7 @@ FactoryGirl.define do
     author "Frédéric Dard"
     author_slug "fredard"
     content "Ce sont toujours les cons qui l'emportent. Question de surnombre !"
-    safe true
+    kind "safe"
 
     trait :empty_message do
       author ""
@@ -14,7 +14,7 @@ FactoryGirl.define do
       author "Donald Trump"
       author_slug "realDonaldTrump"
       content "Robert I'm getting a lot of heat for saying you should dump Kristen- but I'm right. If you saw the Miss Universe girls you would reconsider."
-      safe false
+      kind "unsafe"
     end
 
   end

@@ -6,10 +6,9 @@
       .col-sm-2= msg.author
       .col-sm-10
         %span= msg.content
-        - if msg.safe == true
-          = link_to message_is_unsafe_path(msg.id, safe: @safe_mode), class: 'is_unsafe', method: :put do
-            %span.fa.fa-thumbs-down.unsafe
-            -#%button.unsafe= "unsafe"
+        - if msg.kind == 'safe'
+          = link_to mark_as_unsafe_path(msg.id, redirect_to: root_url(safe: @safe_mode)), class: 'is_unsafe', method: :put do
+            %button.btn.btn-default.unsafe= "Mark as unsafe"
         - else
-          = link_to message_is_safe_path(msg.id, safe: @safe_mode), class: 'is_safe', method: :put do
-            %span.fa.fa-thumbs-up.safe
+          = link_to mark_as_safe_path(msg.id, redirect_to: root_url(safe: @safe_mode)), class: 'is_safe', method: :put do
+            %button.btn.btn-default.safe= "Mark as safe"
