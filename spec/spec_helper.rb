@@ -17,6 +17,12 @@
 
 require 'helpers/helpers'
 
+require 'vcr'
+VCR.configure do |config|
+  config.cassette_library_dir = "specs/cassettes"
+  config.hook_into :webmock # or :fakeweb
+end
+
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

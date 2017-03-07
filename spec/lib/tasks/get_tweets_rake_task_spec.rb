@@ -6,6 +6,9 @@ describe "twitter:get_tweets_from_hashtag" do
   include_context "rake"
 
   it "creates new messages" do
-    expect{ subject.invoke }.to change{ Message.count }.by(20)
+    VCR.use_cassette("twitter") do
+      expect{ subject.invoke }.to change{ Message.count }.by(20)  
+    end
+    
   end
 end

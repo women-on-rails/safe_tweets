@@ -32,11 +32,11 @@ RSpec.describe Message, type: :model do
     end
 
     it "is safe" do
-        expect(message.safe?).to be_truthy
+        expect(message.kind).to eq('safe')
     end
 
     it "is not safe" do
-        expect(troll_message.safe?).not_to be_truthy
+        expect(troll_message.kind).to eq('unsafe')
     end
 
     context "querying all messages" do
