@@ -15,8 +15,13 @@
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 
-require 'capybara/rspec'
 require 'helpers/helpers'
+
+require 'vcr'
+VCR.configure do |config|
+  config.cassette_library_dir = "specs/cassettes"
+  config.hook_into :webmock # or :fakeweb
+end
 
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
@@ -37,6 +42,9 @@ RSpec.configure do |config|
 
   # include my own helpers
   config.include Helpers
+
+  # Include everything that is in the support group.
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.

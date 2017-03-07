@@ -3,6 +3,6 @@ class Message < ApplicationRecord
   validates :author_slug, presence: true
   validates :content, presence: true
 
-  scope :safe, -> { where(safe: true) }
+  scope :safe, -> { where(kind: 'safe') }
 
 end

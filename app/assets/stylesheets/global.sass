@@ -6,6 +6,17 @@
 .text-right
   text-align: right
 
+.btn
+  &:hover
+    transition: all 0.2s
+    cursor: pointer
+
+.btn-default
+  background-color: transparent
+  border: 1px solid $gray
+  &:hover
+    background-color: $gray
+
 ///////////////////////////////////////////
 ////////////// Switch /////////////////////
 ///////////////////////////////////////////
@@ -72,12 +83,6 @@ input:checked + .slider:before
 ///////////////////////////////////////////
 ////////////// Safe / Unsafe //////////////
 ///////////////////////////////////////////
-
-
-
-.safe, .unsafe
-  font-size: 20px
-  padding: 0 10px
 
 .unsafe
   color: $red

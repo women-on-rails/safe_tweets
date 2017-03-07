@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'messages#index'
 
-  put "/messages/:id/unsafe", to: "messages#is_unsafe", as: "message_is_unsafe"
+  put '/unsafe_messages/:id/create', to: 'unsafe_messages#create', as: 'mark_as_unsafe'
 
-  put "/messages/:id/safe", to: "messages#is_safe", as: "message_is_safe"
+  put '/safe_messages/:id/create', to: 'safe_messages#create', as: 'mark_as_safe'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

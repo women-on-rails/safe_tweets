@@ -40,13 +40,16 @@ gem 'jbuilder', '~> 2.5'
 # Assets management
 gem "bower-rails"
 
+gem 'figaro'
+
+gem 'twitter'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'pry'
-  gem 'pry-coolline'
 end
 
 group :development do
@@ -63,6 +66,8 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
